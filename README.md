@@ -1,6 +1,8 @@
 # `fakedata_generator`
 > A rust crate to generate fake datasets
 
+[![Build Status](https://travis-ci.org/kevingimbel/fakedata_generator.svg?branch=master)](https://travis-ci.org/kevingimbel/fakedata_generator)
+
 # IMPORTANT NOTE
 
 The `gen_corpora_switch` generator will not work when compiling the library into a binary or including it in your project. The generator is not able to find the JSON files it needs to read and I haven't figured out how to include the files yet.

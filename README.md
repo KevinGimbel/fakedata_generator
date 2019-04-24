@@ -16,7 +16,14 @@ It is a very early version and not meant to be used in any production services o
 
 ## Usage
 
-Load the library with `use fakedata_generator::*` and then call one of the generator functions. 
+Add the following to your `Cargo.toml`.
+
+```
+[dependencies]
+fakedata_generator = "0.1.0"
+```
+
+Then load the library with `use fakedata_generator::*` and then call one of the generator functions. 
 
 ```rust
 use fakedata_generator::*;

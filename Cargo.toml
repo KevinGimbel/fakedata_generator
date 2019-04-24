@@ -1,0 +1,18 @@
+[package]
+name = "generator"
+version = "0.1.0"
+authors = ["Kevin Gimbel <hallo@kevingimbel.com>"]
+edition = "2018"
+
+[dependencies]
+rand = "0.6.5"
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+
+
+[dev-dependencies]
+criterion = "0.2"
+
+[[bench]]
+name = "generator_benchmark"
+harness = false

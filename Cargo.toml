@@ -1,8 +1,11 @@
 [package]
-name = "generator"
+name = "fakedata_generator"
 version = "0.1.0"
 authors = ["Kevin Gimbel <hallo@kevingimbel.com>"]
 edition = "2018"
+license = "MIT"
+description = "Generate fake data with various generators."
+repository = "https://github.com/kevingimbel/fakedata_generator"
 
 [dependencies]
 rand = "0.6.5"

@@ -26,6 +26,7 @@ fakedata_generator = "0.1.0"
 Then load the library with `use fakedata_generator::*` and then call one of the generator functions. 
 
 ```rust
+extern crate fakedata_generator;
 use fakedata_generator::*;
 
 fn main() {

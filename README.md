@@ -3,10 +3,7 @@
 
 [![Build Status](https://travis-ci.org/kevingimbel/fakedata_generator.svg?branch=master)](https://travis-ci.org/kevingimbel/fakedata_generator)
 [![Crates.io](https://img.shields.io/crates/v/fakedata_generator.svg)](https://crates.io/crates/fakedata_generator)
-# IMPORTANT NOTE
 
-The `gen_corpora_switch` generator will not work when compiling the library into a binary or including it in your project. The generator is not able to find the JSON files it needs to read and I haven't figured out how to include the files yet.
-The data comes from the [Corpora Project](https://github.com/dariusk/corpora).
 
 ## About
 
@@ -155,15 +152,19 @@ let num: String = gen_enum("1,100".to_string());
 
 ### Corpora generator
 
-`gen_corpora_switch` is a special generator that reads JSON files from the [Corpora Project](https://github.com/dariusk/corpora) and returns a random value. As noted above this will not work as of now.
+`gen_corpora_switch` is a special generator that gets its data in JSON format taken from the [Corpora Project](https://github.com/dariusk/corpora). A copy of the entire Corpora project is included in the `data` directory.
+Not all datasets are available as of now. See the [src/corpora/data.rs](https://github.com/kevingimbel/fakedata_generator/blob/master/src/corpora/data.rs) file for all available sets.
 
-Possible values: 
+Possible input values: 
 - `cat`
 - `dog`
 - `horse`
 - `dinosaur`
+- `gemstone`
+- `mood`
+- `fabric`
 
-Each of these will return a random breed of the specified animal.
+Each of these will return a random word from the list.
 
 Function signature
 ```rust
@@ -172,7 +173,6 @@ gen_corpora_switch(input: String) -> String
 
 Example
 ```rust
-let cat: String = gen_corpora_switch("cat");
-// cat = "European Shorthair"
-
+let word: String = gen_corpora_switch("cat");
+// word = "European Shorthair"
 ```

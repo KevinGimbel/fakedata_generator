@@ -173,6 +173,6 @@ gen_corpora_switch(input: String) -> String
 
 Example
 ```rust
-let word: String = gen_corpora_switch("cat");
+let word: String = gen_corpora_switch("cat".to_string());
 // word = "European Shorthair"
 ```

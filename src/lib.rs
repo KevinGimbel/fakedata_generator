@@ -12,6 +12,7 @@ fn parse_args_to_vec(input: &str) -> Vec<&str> {
 ///
 /// ## Example
 /// ```rust
+/// use fakedata_generator::gen_username;
 /// let user: String = gen_username();
 /// // user => ahmadajmi
 /// ```
@@ -42,6 +43,7 @@ pub fn gen_username() -> String {
 ///
 /// ## Example
 /// ```rust
+/// use fakedata_generator::gen_domain;
 /// let domain = gen_domain();
 /// // domain => names.eu
 /// ```
@@ -56,6 +58,7 @@ pub fn gen_domain() -> String {
 ///
 /// ## Example
 /// ```rust
+///use fakedata_generator::gen_email;
 ///let email: String = gen_email();
 /// // email => devankosha@lnames.org
 /// ```
@@ -70,6 +73,7 @@ pub fn gen_email() -> String {
 ///
 /// ## Example
 /// ```rust
+///use fakedata_generator::gen_enum;
 ///let word: String = gen_enum("some,random,words".to_string());
 /// // word = "random"
 /// ```
@@ -96,6 +100,7 @@ pub fn gen_enum(input: String) -> String {
 ///
 /// ## Example
 /// ```rust
+/// use fakedata_generator::gen_http_method;
 /// let method: String = gen_http_method();
 /// // method = "GET"
 /// ```
@@ -110,12 +115,14 @@ pub fn gen_http_method() -> String {
     return format!("{}", args[index]); // String::from(args[index]);
 }
 
-/// Return random integer (`i32`) in range. Must specify 1 or 2 numbers separated by comma.
+/// Return random integer in range. Must specify 1 or 2 numbers separated by comma.
 /// If 1 argument is specified it is handled as "highest" value and `0` is used as lowest value.
 ///
+/// _Note: The return type is `String`!_
 /// ## Example
 ///```rust
-///let i: int32 = gen_int("1,100".to_string());
+///use fakedata_generator::gen_int;
+///let i: String = gen_int("1,100".to_string());
 /// // i = 42
 /// ```
 pub fn gen_int(input: String) -> String {
@@ -148,6 +155,7 @@ pub fn gen_int(input: String) -> String {
 ///
 /// ## Example
 /// ```
+/// use fakedata_generator::gen_ipv4;
 /// let ipv4 = gen_ipv4();
 /// // => ipv4 = 172.129.23.201
 /// ```

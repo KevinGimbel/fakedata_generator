@@ -51,6 +51,7 @@ fn get_dataset(key: &str) -> Result<JSONDataset, Box<Error>> {
 ///
 /// ## Example
 /// ```rust
+/// use fakedata_generator::corpora::gen_corpora_switch;
 /// let horse: String = gen_corpora_switch("horse".to_string());
 /// let gem: String = gen_corpora_switch("gemstone".to_string());
 /// // horse = Appaloosa

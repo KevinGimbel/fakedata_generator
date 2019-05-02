@@ -9,11 +9,15 @@ use serde::Deserialize;
 
 pub mod data;
 
+/// JSONDataset represents a generic data structure for storing the parsed JSON. Each JSON taken
+/// from Corpora has a `data` field which is an Array of Strings in JSON (= Vec<String> in Rust).
 #[derive(Deserialize, Debug)]
 struct JSONDataset {
     data: Vec<String>,
 }
 
+/// `get_dataset` returns the from the constants defined in `src/corpora/data.rs` and parses them into
+/// a `JSONDataset struct.
 fn get_dataset(key: &str) -> Result<JSONDataset, Box<Error>> {
     let json_dataset: &str = match key {
         "dinosaur" => data::DATA_DINOSAURS,
@@ -31,7 +35,27 @@ fn get_dataset(key: &str) -> Result<JSONDataset, Box<Error>> {
     return Ok(dataset);
 }
 
-// gen_corpora_switch accepts a name and then returns a value from the related file
+/// `gen_corpora_switch` is a special generator that gets its data in JSON format taken from the [Corpora Project](https://github.com/dariusk/corpora). A copy of the entire Corpora project is included in the `data` directory.
+/// Not all data sets are available as of now. See the [src/corpora/data.rs](https://github.com/kevingimbel/fakedata_generator/blob/master/src/corpora/data.rs) file for all available sets.
+///
+/// Possible input values:
+///   - `cat`
+///   - `dog`
+///   - `horse`
+///   - `dinosaur`
+///   - `gemstone`
+///   - `mood`
+///   - `fabric`
+///
+/// Each of these will return a random word from the list.
+///
+/// ## Example
+/// ```rust
+/// let horse: String = gen_corpora_switch("horse".to_string());
+/// let gem: String = gen_corpora_switch("gemstone".to_string());
+/// // horse = Appaloosa
+/// // gem = emerald
+/// ```
 pub fn gen_corpora_switch(name: String) -> String {
     let n: &str = name.as_str();
     let data = get_dataset(n).unwrap().data;

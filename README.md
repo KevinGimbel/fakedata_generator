@@ -3,24 +3,23 @@
 
 [![Build Status](https://travis-ci.org/kevingimbel/fakedata_generator.svg?branch=master)](https://travis-ci.org/kevingimbel/fakedata_generator)
 [![Crates.io](https://img.shields.io/crates/v/fakedata_generator.svg)](https://crates.io/crates/fakedata_generator)
+[![Documentation at docs.rs](https://img.shields.io/badge/documentation%20@-docs.rs-green.svg)](https://docs.rs/fakedata_generator/)
 
 
 ## About
 
-This crate provides functions to generate datasets, e.g. 10 dog breed names or 10 domain names, etc.
-
-It is a very early version and not meant to be used in any production services or third-party tooling. 
+This library provides functions to generate random values. It is in its early stages and some values are not yet fully random. Basic documentation is provided below and on [https://docs.rs/fakedata_generator/](https://docs.rs/fakedata_generator/). 
 
 ## Usage
 
-Add the following to your `Cargo.toml`.
+Add the library as dependency to your `Cargo.toml`.
 
 ```
 [dependencies]
 fakedata_generator = "0.1.0"
 ```
 
-Then load the library with `use fakedata_generator::*` and then call one of the generator functions. 
+Now the the library can be loaded with `use fakedata_generator::*`.    
 
 ```rust
 extern crate fakedata_generator;
@@ -32,7 +31,7 @@ fn main() {
 }
 ```
 
-A list of all available generators can be found below.
+A full list of available generators and their function signature is shown below. 
 
 ## Generators
 
@@ -40,34 +39,34 @@ A list of all available generators can be found below.
 
 #### email
 
-Return a random e-Mail address which is a combination of the username and domain generator. 
+Return a random e-Mail address which is a combination of the username and domain generator.
 
-Rust function signature
+Function signature
 ```rust
 gen_email() -> String
 ```
 
-Example
+Example call
 ```shell
-let word: String = gen_email();
-// word = shaneIxD@we.net
+let email: String = gen_email();
+// email = shaneIxD@we.net
 ```
 
 #### username
 
 Return a random username.
 
-*Note:* predefined list as of `v0.1`.
+*Note:* predefined list as of `v0.2`.
 
 Function signature
 ```rust
 gen_username() -> String
 ```
 
-Example
+Example call
 ```rust
-let word: String = gen_username();
-// word = ahmadajmi
+let user: String = gen_username();
+// user = ahmadajmi
 ```
 
 #### domain
@@ -76,14 +75,15 @@ Return a random domain name.
 
 *Note:* Does not yet support all TDLs and true random host names - it's created by a predefined list.
 
+Function signature
 ```rust
 gen_domain() -> String
 ```
 
-Example
+Example call
 ```rust
-let word: String = gen_domain();
-// word = "names.us"
+let domain: String = gen_domain();
+// domain = "names.us"
 ```
 
 #### gen_http_method
@@ -92,26 +92,28 @@ Return a random HTTP method from a defined list.
 
 Possible values: `"DELETE", "GET", "HEAD", "OPTION", "PATCH", "POST", "PUT"`
 
+Function signature
 ```rust
 gen_http_method() -> String
 ```
 
-Example
+Example call
 ```rust
-let word: String = gen_http_method();
-// word = "GET"
+let method: String = gen_http_method();
+// method = "GET"
 ```
 
 
 #### gen_ipv4
 
-Returns a random IP address. Generates four numbers in the range of 0 - 255.
+Returns a random IP address. Generates four numbers in the range of 0 - 255 which are written out in the format `{}.{}.{}.{}`. 
 
+Function signature
 ```rust
 gen_ipv4() -> String
 ``` 
 
-Exmaple
+Example call
 ```rust
 let ip: String = gen_ipv4();
 // ip = "168.11.40.75"
@@ -121,14 +123,14 @@ let ip: String = gen_ipv4();
 
 #### enum
 
-Return random string from set of specified strings. Specify a comma seperated list as argument.
+Return random string from set of specified strings. Specify a comma separated list as argument.
 
 Function signature
 ```rust
 gen_enum(input: String) -> String
 ```
 
-Example
+Example call
 ```rust
 let word: String = gen_enum("hello,hola,hallo".to_string());
 // word = "hola"
@@ -137,14 +139,14 @@ let word: String = gen_enum("hello,hola,hallo".to_string());
 
 #### int
 
-Return random integer in range. Must specify 1 or 2 numbers separated by comma.
+Return random integer in range. Must specify 1 or 2 numbers separated by comma. If 1 argument is specified it is handled as "highest" value and `0` is used as lowest value. 
 
 Function signature
 ```rust
 gen_int(input: String) -> String
 ```
 
-Example
+Example call
 ```rust
 let num: String = gen_enum("1,100".to_string());
 // num = "42"
@@ -153,7 +155,7 @@ let num: String = gen_enum("1,100".to_string());
 ### Corpora generator
 
 `gen_corpora_switch` is a special generator that gets its data in JSON format taken from the [Corpora Project](https://github.com/dariusk/corpora). A copy of the entire Corpora project is included in the `data` directory.
-Not all datasets are available as of now. See the [src/corpora/data.rs](https://github.com/kevingimbel/fakedata_generator/blob/master/src/corpora/data.rs) file for all available sets.
+Not all data sets are available as of now. See the [src/corpora/data.rs](https://github.com/kevingimbel/fakedata_generator/blob/master/src/corpora/data.rs) file for all available sets.
 
 Possible input values: 
 - `cat`
@@ -171,8 +173,11 @@ Function signature
 gen_corpora_switch(input: String) -> String
 ```
 
-Example
+Example call
 ```rust
 let word: String = gen_corpora_switch("cat".to_string());
 // word = "European Shorthair"
+
+let fabric: String = gen_corpora_switch("fabric".to_string());
+// word = "longcloth"
 ```

@@ -3,7 +3,7 @@
 
 [![Build Status](https://travis-ci.org/kevingimbel/fakedata_generator.svg?branch=master)](https://travis-ci.org/kevingimbel/fakedata_generator)
 [![Crates.io](https://img.shields.io/crates/v/fakedata_generator.svg)](https://crates.io/crates/fakedata_generator)
-[![Documentation at docs.rs](https://img.shields.io/badge/documentation%20@-docs.rs-green.svg)](https://docs.rs/fakedata_generator/)
+[![Documentation at docs.rs](https://docs.rs/fakedata_generator/badge.svg)](https://docs.rs/fakedata_generator/)
 
 
 ## About

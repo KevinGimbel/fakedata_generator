@@ -1,16 +1,29 @@
 # `fakedata_generator`
-> A rust crate to generate fake datasets
+> A rust library to generate fake data
 
 [![Build Status](https://travis-ci.org/kevingimbel/fakedata_generator.svg?branch=master)](https://travis-ci.org/kevingimbel/fakedata_generator)
 [![Crates.io](https://img.shields.io/crates/v/fakedata_generator.svg)](https://crates.io/crates/fakedata_generator)
 [![Documentation at docs.rs](https://docs.rs/fakedata_generator/badge.svg)](https://docs.rs/fakedata_generator/)
 
+## Table of contents
+
+* [About](#about)
+* [Usage](#usage)
+* [Generators](#generators)
+  * [Generators without arguments](#generators-without-arguments)
+  * [Generators with arguments](#generators-with-arguments)
+  * [Corpora generator](#corpora-generator)
+* [Contributing](#contributing)
+* [Code of Conduct](#code-of-conduct)
+* [License](#license)
 
 ## About
+[⬆️ Back to Top](#table-of-contents)
 
-This library provides functions to generate random values. It is in its early stages and some values are not yet fully random. Basic documentation is provided below and on [https://docs.rs/fakedata_generator/](https://docs.rs/fakedata_generator/). 
+This library provides functions to generate random values ("fake data"). It is in its early stages and some values are not yet fully random. Basic documentation is provided below and on [https://docs.rs/fakedata_generator/](https://docs.rs/fakedata_generator/). 
 
 ## Usage
+[⬆️ Back to Top](#table-of-contents)
 
 Add the library as dependency to your `Cargo.toml`.
 
@@ -36,6 +49,7 @@ A full list of available generators and their function signature is shown below.
 ## Generators
 
 ### Generators without arguments
+[⬆️ Back to Top](#table-of-contents)
 
 #### email
 
@@ -120,6 +134,7 @@ let ip: String = gen_ipv4();
 ```
 
 ### Generators with arguments
+[⬆️ Back to Top](#table-of-contents)
 
 #### enum
 
@@ -153,6 +168,7 @@ let num: String = gen_enum("1,100".to_string());
 ```
 
 ### Corpora generator
+[⬆️ Back to Top](#table-of-contents)
 
 `gen_corpora_switch` is a special generator that gets its data in JSON format taken from the [Corpora Project](https://github.com/dariusk/corpora). A copy of the entire Corpora project is included in the `data` directory.
 Not all data sets are available as of now. See the [src/corpora/data.rs](https://github.com/kevingimbel/fakedata_generator/blob/master/src/corpora/data.rs) file for all available sets.
@@ -181,3 +197,30 @@ let word: String = gen_corpora_switch("cat".to_string());
 let fabric: String = gen_corpora_switch("fabric".to_string());
 // word = "longcloth"
 ```
+
+## Contributing
+[⬆️ Back to Top](#table-of-contents)
+
+We love and welcome every form of contribution.
+
+### Where to start?
+
+Here are some good places to start:
+
+* Issues with label [Good first issue](https://github.com/kevingimbel/fakedata_generator/labels/good%20first%20issue)
+* Issues with label [Documentation](https://github.com/kevingimbel/fakedata_generator/labels/documentation)
+* Providing example implementations or usage demos
+
+## Code of Conduct
+[⬆️ Back to Top](#table-of-contents)
+
+You are expected to follow our [code of conduct](https://github.com/kevingimbel/fakedata_generator/blob/master/CODE_OF_CONDUCT.md) when interacting with the project via issues, pull requests or in any other form. Many thanks to the awesome [contributor covenant](https://www.contributor-covenant.org/) initiative!
+
+## License
+[⬆️ Back to Top](#table-of-contents)
+
+[MIT License](https://github.com/kevingimbel/fakedata_generator/blob/master/LICENSE) Copyright (c) 2019 Kevin Gimbel
+
+Special Thanks to the Rust Community, Rust Language Maintainers, and JetBrains for IntelliJ IDEA. See [NOTICE](https://github.com/kevingimbel/fakedata_generator/blob/master/NOTICE) for full list. 
+ 
+

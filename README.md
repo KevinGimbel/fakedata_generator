@@ -15,6 +15,7 @@
   * [Generators without arguments](#generators-without-arguments)
   * [Generators with arguments](#generators-with-arguments)
   * [Corpora generator](#corpora-generator)
+* [Example](#example)
 * [Contributing](#contributing)
 * [Code of Conduct](#code-of-conduct)
 * [License](#license)
@@ -199,6 +200,16 @@ let word: String = gen_corpora_switch("cat".to_string());
 let fabric: String = gen_corpora_switch("fabric".to_string());
 // word = "longcloth"
 ```
+
+## Example
+[⬆️ Back to Top](#table-of-contents)
+
+The following examples show how `fakedata_generator' can be used in a Rust project.
+
+| Name | Description | Repository |
+|------|-------------|------------|
+| `fakedata_server` | A HTTP API providing random values based on `fakedata_generator` data. | [View code](https://github.com/kevingimbel/fakedata_server) |
+
 
 ## Contributing
 [⬆️ Back to Top](#table-of-contents)

@@ -204,7 +204,7 @@ let fabric: String = gen_corpora_switch("fabric".to_string());
 ## Example
 [⬆️ Back to Top](#table-of-contents)
 
-The following examples show how `fakedata_generator' can be used in a Rust project.
+The following examples show how `fakedata_generator` can be used in a Rust project.
 
 | Name | Description | Repository |
 |------|-------------|------------|

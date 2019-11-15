@@ -1,0 +1,16 @@
+name: Rust
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: rust-clippy-check
+      uses: actions-rs/clippy-check@v1.0.0
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+

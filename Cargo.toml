@@ -14,7 +14,7 @@ serde = { version = "1.0", features = ["derive"] }
 
 
 [dev-dependencies]
-criterion = "0.2"
+criterion = "0.3"
 
 [[bench]]
 name = "generator_benchmark"

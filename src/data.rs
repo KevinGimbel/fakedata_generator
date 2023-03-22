@@ -4,10 +4,11 @@ extern crate serde_json;
 
 use rand::Rng;
 
-use std::error::Error;
 use serde::Deserialize;
+use std::error::Error;
 
-pub mod data;
+pub mod corpora;
+pub mod tlds;
 
 /// JSONDataset represents a generic data structure for storing the parsed JSON. Each JSON taken
 /// from Corpora has a `data` field which is an Array of Strings in JSON (= Vec<String> in Rust).
@@ -18,15 +19,16 @@ struct JSONDataset {
 
 /// `get_dataset` returns the from the constants defined in `src/corpora/data.rs` and parses them into
 /// a `JSONDataset struct.
-fn get_dataset(key: &str) -> Result<JSONDataset, Box<Error>> {
+fn get_dataset(key: &str) -> Result<JSONDataset, Box<dyn Error>> {
     let json_dataset: &str = match key {
-        "dinosaur" => data::DATA_DINOSAURS,
-        "cat" => data::DATA_CATS,
-        "dog" => data::DATA_DOGS,
-        "horse" => data::DATA_HORSES,
-        "fabric" => data::DATA_FABRIC,
-        "gemstone" => data::DATA_GEMSTONE,
-        "mood" => data::DATA_MOOD,
+        "dinosaur" => corpora::DATA_DINOSAURS,
+        "cat" => corpora::DATA_CATS,
+        "dog" => corpora::DATA_DOGS,
+        "horse" => corpora::DATA_HORSES,
+        "fabric" => corpora::DATA_FABRIC,
+        "gemstone" => corpora::DATA_GEMSTONE,
+        "mood" => corpora::DATA_MOOD,
+        "tlds" => tlds::DATA_TLDS,
         _ => "",
     };
 
@@ -46,6 +48,7 @@ fn get_dataset(key: &str) -> Result<JSONDataset, Box<Error>> {
 ///   - `gemstone`
 ///   - `mood`
 ///   - `fabric`
+///   - `tlds`
 ///
 /// Each of these will return a random word from the list.
 ///
@@ -63,7 +66,7 @@ pub fn gen_corpora_switch(name: String) -> String {
 
     let mut rnd = rand::thread_rng();
     let mut index: usize = 0;
-    if data.len()-1 > 0 {
+    if data.len() - 1 > 0 {
         index = rnd.gen_range(0, data.len() - 1);
     }
 

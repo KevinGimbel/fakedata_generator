@@ -1,9 +1,6 @@
-/// Module data provides constants which contain the JSON in `&str` format to be consumed by the #
+/// Module corpora provides constants which contain the JSON in `&str` format to be consumed by the #
 /// `gen_corpora_switch` function. Each JSON is taken from the [Corpora Project](https://github.com/dariusk/corpora)
 /// and then cleaned-up to have only one filed named `data` which contains an array of strings.
-
-
-
 
 /// Contains cat breeds
 pub const DATA_CATS: &str = r#"

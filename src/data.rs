@@ -37,8 +37,10 @@ fn get_dataset(key: &str) -> Result<JSONDataset, Box<dyn Error>> {
     return Ok(dataset);
 }
 
-/// `gen_corpora_switch` is a special generator that gets its data in JSON format taken from the [Corpora Project](https://github.com/dariusk/corpora). A copy of the entire Corpora project is included in the `data` directory.
-/// Not all data sets are available as of now. See the [src/corpora/data.rs](https://github.com/kevingimbel/fakedata_generator/blob/master/src/corpora/data.rs) file for all available sets.
+/// `gen_switch` is a special generator that gets its data in JSON format taken from the [Corpora Project](https://github.com/dariusk/corpora). A copy of the entire Corpora project is included in the `data` directory.
+/// Not all data sets are available as of now. See the [src/corpora.rs](https://github.com/kevingimbel/fakedata_generator/blob/master/src/corpora.rs) file for all available sets.
+///
+/// In addition TLDs are generated from https://data.iana.org/TLD/tlds-alpha-by-domain.txt
 ///
 /// Possible input values:
 ///   - `cat`
@@ -54,13 +56,13 @@ fn get_dataset(key: &str) -> Result<JSONDataset, Box<dyn Error>> {
 ///
 /// ## Example
 /// ```rust
-/// use fakedata_generator::corpora::gen_corpora_switch;
-/// let horse: String = gen_corpora_switch("horse".to_string());
-/// let gem: String = gen_corpora_switch("gemstone".to_string());
+/// use fakedata_generator::data::gen_switch;
+/// let horse: String = gen_switch("horse".to_string());
+/// let gem: String = gen_switch("gemstone".to_string());
 /// // horse = Appaloosa
 /// // gem = emerald
 /// ```
-pub fn gen_corpora_switch(name: String) -> String {
+pub fn gen_switch(name: String) -> String {
     let n: &str = name.as_str();
     let data = get_dataset(n).unwrap().data;
 
@@ -71,4 +73,9 @@ pub fn gen_corpora_switch(name: String) -> String {
     }
 
     return data[index].to_string();
+}
+
+// gen_corpora_switch is deprecated and should not be used, for now it is a wrapper around gen_switch()
+pub fn gen_corpora_switch(name: String) -> String {
+    return gen_switch(name);
 }

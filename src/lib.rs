@@ -44,7 +44,7 @@ pub fn gen_username() -> String {
 /// // domain => names.eu
 /// ```
 pub fn gen_domain() -> String {
-    let tld = gen_enum(data::gen_corpora_switch("tlds".to_string()));
+    let tld = gen_enum(data::gen_switch("tlds".to_string()));
     let domain = gen_enum(String::from("some,random,names,we,make,up,for,testing"));
     return format!("{}.{}", &domain, &tld);
 }

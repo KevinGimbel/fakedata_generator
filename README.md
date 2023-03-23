@@ -3,7 +3,7 @@
 
 !["data generator for Rust"](assets/brand/github_header.png)
 
-[![Build Status](https://travis-ci.org/kevingimbel/fakedata_generator.svg?branch=master)](https://travis-ci.org/kevingimbel/fakedata_generator)
+![Build Status](https://github.com/KevinGimbel/fakedata_generator/actions/workflows/rust.yml/badge.svg)
 [![Crates.io](https://img.shields.io/crates/v/fakedata_generator.svg)](https://crates.io/crates/fakedata_generator)
 [![Documentation at docs.rs](https://docs.rs/fakedata_generator/badge.svg)](https://docs.rs/fakedata_generator/)
 

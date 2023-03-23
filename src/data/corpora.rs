@@ -3903,5 +3903,3 @@ pub const DATA_MOOD: &str = r#"
 	]
 }
 "#;
-
-// pub const DATA_DONKEY: &str = r#""#;

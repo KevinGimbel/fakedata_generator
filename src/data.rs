@@ -69,7 +69,7 @@ pub fn gen_switch(name: String) -> String {
     let mut rnd = rand::thread_rng();
     let mut index: usize = 0;
     if data.len() - 1 > 0 {
-        index = rnd.gen_range(0, data.len() - 1);
+        index = rnd.gen_range(0..data.len() - 1);
     }
 
     return data[index].to_string();

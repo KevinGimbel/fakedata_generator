@@ -78,7 +78,7 @@ pub fn gen_enum(input: String) -> String {
     let mut rnd = rand::thread_rng();
     let mut index: usize = 0;
     if args.len() - 1 > 0 {
-        index = rnd.gen_range(0, args.len() - 1);
+        index = rnd.gen_range(0..args.len() - 1);
     }
 
     return format!("{}", args[index]); //String::from(args[index]);
@@ -105,7 +105,7 @@ pub fn gen_http_method() -> String {
     let mut rnd = rand::thread_rng();
     let mut index: usize = 0;
     if args.len() - 1 > 0 {
-        index = rnd.gen_range(0, args.len() - 1);
+        index = rnd.gen_range(0..args.len() - 1);
     }
 
     return format!("{}", args[index]); // String::from(args[index]);
@@ -141,7 +141,7 @@ pub fn gen_int(input: String) -> String {
         i2 = args[0].parse().unwrap();
     }
 
-    let rand_number = rnd.gen_range(i1, i2);
+    let rand_number = rnd.gen_range(i1..i2);
 
     return rand_number.to_string();
 }
@@ -156,10 +156,10 @@ pub fn gen_int(input: String) -> String {
 /// ```
 pub fn gen_ipv4() -> String {
     let mut rnd = rand::thread_rng();
-    let a = rnd.gen_range(1, 255);
-    let b = rnd.gen_range(1, 255);
-    let c = rnd.gen_range(1, 255);
-    let d = rnd.gen_range(1, 255);
+    let a = rnd.gen_range(1..255);
+    let b = rnd.gen_range(1..255);
+    let c = rnd.gen_range(1..255);
+    let d = rnd.gen_range(1..255);
 
     return format!("{}.{}.{}.{}", a, b, c, d);
 }

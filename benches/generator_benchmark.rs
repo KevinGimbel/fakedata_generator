@@ -13,7 +13,7 @@ fn corpora_benchmark(c: &mut Criterion) {
     c.bench_function("gen: enum", |b| {
         b.iter(|| gen_enum("hello,hola,hallo".to_string()))
     });
-    c.bench_function("gen: http.method", |b| b.iter(|| gen_http_method()));
+    c.bench_function("gen: http_method", |b| b.iter(|| gen_http_method()));
     c.bench_function("gen: int", |b| b.iter(|| gen_int("10,10000".to_string())));
     c.bench_function("gen: ipv4", |b| b.iter(|| gen_ipv4()));
 }

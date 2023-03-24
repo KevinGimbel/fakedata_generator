@@ -182,7 +182,7 @@ pub fn gen_ipv4() -> String {
 /// gen_private_ipv4(192) -> 192.168.x.x
 /// ## Example
 /// ```
-/// use fakedata_generator::gen_private_ipv4
+/// use fakedata_generator::gen_private_ipv4;
 /// let private_ipv4 = gen_private_ipv4(10);
 /// // => private_ipv4 = 10.128.20.21
 /// ```

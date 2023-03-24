@@ -88,15 +88,17 @@ pub fn gen_enum(input: String) -> String {
     return format!("{}", args[index]); //String::from(args[index]);
 }
 
-/// Return random HTTP Method.
+/// Return random HTTP Method, taken from https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
 /// Possible values:
-/// * DELETE
 /// * GET
 /// * HEAD
-/// * OPTION
-/// * PATCH
 /// * POST
 /// * PUT
+/// * DELETE
+/// * CONNECT
+/// * OPTIONS
+/// * TRACE
+/// * PATCH
 ///
 /// ## Example
 /// ```rust
@@ -105,12 +107,12 @@ pub fn gen_enum(input: String) -> String {
 /// // method = "GET"
 /// ```
 pub fn gen_http_method() -> String {
-    let args = vec!["DELETE", "GET", "HEAD", "OPTION", "PATCH", "POST", "PUT"];
+    let args = vec![
+        "GET", "HEAD", "POST", "PUT", "DELETE", "CONNECT", "OPTIONS", "TRACE", "PATCH",
+    ];
     let mut rnd = rand::thread_rng();
-    let mut index: usize = 0;
-    if args.len() - 1 > 0 {
-        index = rnd.gen_range(0..args.len() - 1);
-    }
+    // the length of the args vec doesn't change so we don't need to calculate it.
+    let index: usize = rnd.gen_range(0..8);
 
     return format!("{}", args[index]); // String::from(args[index]);
 }

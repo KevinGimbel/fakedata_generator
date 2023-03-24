@@ -31,7 +31,7 @@
   - [Tooling](#tooling)
 - [Code of Conduct](#code-of-conduct)
 - [License](#license)
-<!-- END mktoc -->)
+<!-- END mktoc -->
 
 ## About
 [⬆️ Back to Top](#table-of-contents)

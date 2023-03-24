@@ -18,7 +18,7 @@ fn parse_args_to_vec(input: &str) -> Vec<&str> {
 /// ```
 pub fn gen_username() -> String {
     let user = gen_enum(String::from(
-        "devankoshal,jesseddy,ahmadajmi,Karimmove,benefritz,meln1ks,shaneIxD,BryanHorsey",
+        "devankoshal,jesseddy,ahmadajmi,KarimMove,benefritz,meln1ks,shaneIxD,BryanHorsey,AnthraX,AmbientTech,CrucifiX,BronzeGamer,Scarface,b0rnc0nfused,XxX_SlAyEr_XxX",
     ));
     return user;
 }
@@ -49,20 +49,24 @@ pub fn gen_domain() -> String {
     return format!("{}.{}", &domain, &tld);
 }
 
-/// Return a randomly generated e-Mail address. This generator combines the `gen_username` and
-/// `gen_domain` generator.
+/// Return a randomly generated e-Mail address. This generator uses the `gen_username` generator.
 ///
 /// ## Example
 /// ```rust
 ///use fakedata_generator::gen_email;
 ///let email: String = gen_email();
-/// // email => devankosha@lnames.org
+/// // email => devankosha@hmail.com
 /// ```
 pub fn gen_email() -> String {
     let user = gen_username();
-    let domain = gen_domain();
+    let tld: String = gen_enum("de,org,com,net,io,email,dev".to_string());
+    let domain: String = gen_enum(
+        "mail-services,postfach,box.mail,mail.cyberspace,hmail,coldmail,nahoo,mail".to_string(),
+    );
 
-    return format!("{}@{}", &user, &domain);
+    let email: String = format!("{}.{}", &domain, &tld);
+
+    return format!("{}@{}", &user, &email);
 }
 
 /// Return random string from set of specified strings. Specify a comma separated list as argument.

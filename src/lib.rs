@@ -169,6 +169,42 @@ pub fn gen_ipv4() -> String {
 
     return format!("{}.{}.{}.{}", a, b, c, d);
 }
+/// Generate a private IP address.
+///
+/// There's 3 blocks of private IP addresses:
+/// 10.0.0.0 – 10.255.255.255
+/// 172.16.0.0 – 172.31.255.255
+/// 192.168.0.0 – 192.168.255.255
+///
+/// Choose a block by providing the starting number as range:
+/// gen_private_ipv4(10) -> 10.x.x.x
+/// gen_private_ipv4(172) -> 172.16.x.x
+/// gen_private_ipv4(192) -> 192.168.x.x
+/// ## Example
+/// ```
+/// use fakedata_generator::gen_private_ipv4
+/// let private_ipv4 = gen_private_ipv4(10);
+/// // => private_ipv4 = 10.128.20.21
+/// ```
+pub fn gen_private_ipv4(starting_range: usize) -> String {
+    let mut rnd = rand::thread_rng();
+    let a = match starting_range {
+        10 => 10,
+        172 => 172,
+        192 => 192,
+        _ => 10,
+    };
+    let b = match a {
+        10 => rnd.gen_range(1..255),
+        172 => rnd.gen_range(16..31),
+        192 => 168,
+        _ => 0,
+    };
+    let c = rnd.gen_range(1..255);
+    let d = rnd.gen_range(1..255);
+
+    return format!("{}.{}.{}.{}", a, b, c, d);
+}
 
 #[cfg(test)]
 mod tests {

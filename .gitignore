@@ -4,3 +4,4 @@
 .idea
 generator/target/
 *.profraw
+Cargo.lock

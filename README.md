@@ -4,21 +4,34 @@
 !["data generator for Rust"](assets/brand/github_header.png)
 
 ![Build Status](https://github.com/KevinGimbel/fakedata_generator/actions/workflows/rust.yml/badge.svg)
+![Coverage](assets/coverage/flat.svg)
 [![Crates.io](https://img.shields.io/crates/v/fakedata_generator.svg)](https://crates.io/crates/fakedata_generator)
 [![Documentation at docs.rs](https://docs.rs/fakedata_generator/badge.svg)](https://docs.rs/fakedata_generator/)
 
 ## Table of contents
-
-* [About](#about)
-* [Usage](#usage)
-* [Generators](#generators)
-  * [Generators without arguments](#generators-without-arguments)
-  * [Generators with arguments](#generators-with-arguments)
-  * [Corpora generator](#corpora-generator)
-* [Example](#example)
-* [Contributing](#contributing)
-* [Code of Conduct](#code-of-conduct)
-* [License](#license)
+<!-- BEGIN mktoc -->
+- [Table of contents](#table-of-contents)
+- [About](#about)
+- [Usage](#usage)
+- [Generators](#generators)
+  - [Generators without arguments](#generators-without-arguments)
+    - [email](#email)
+    - [username](#username)
+    - [domain](#domain)
+    - [gen_http_method](#gen_http_method)
+    - [gen_ipv4](#gen_ipv4)
+  - [Generators with arguments](#generators-with-arguments)
+    - [enum](#enum)
+    - [int](#int)
+    - [private ipv4](#private-ipv4)
+  - [Corpora generator](#corpora-generator)
+- [Example](#example)
+- [Contributing](#contributing)
+  - [Where to start?](#where-to-start)
+  - [Tooling](#tooling)
+- [Code of Conduct](#code-of-conduct)
+- [License](#license)
+<!-- END mktoc -->)
 
 ## About
 [⬆️ Back to Top](#table-of-contents)
@@ -242,6 +255,12 @@ Here are some good places to start:
 * Issues with label [Documentation](https://github.com/kevingimbel/fakedata_generator/labels/documentation)
 * Providing example implementations or usage demos
 
+### Tooling
+
+- [mktoc](https://github.com/KevinGimbel/mktoc) is used for table of content generation in the README.md
+- [grcov](https://github.com/mozilla/grcov) is used to generate the coverage badge
+    - this is currently done by hand and not by CI, run `helpers/coverage.sh` to update the badge
+
 ## Code of Conduct
 [⬆️ Back to Top](#table-of-contents)
 
@@ -253,5 +272,3 @@ You are expected to follow our [code of conduct](https://github.com/kevingimbel/
 [MIT License](https://github.com/kevingimbel/fakedata_generator/blob/master/LICENSE) Copyright (c) 2019 Kevin Gimbel
 
 Special Thanks to the Rust Community, Rust Language Maintainers, and JetBrains for IntelliJ IDEA. See [NOTICE](https://github.com/kevingimbel/fakedata_generator/blob/master/NOTICE) for full list. 
- 
-

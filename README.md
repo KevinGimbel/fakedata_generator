@@ -170,6 +170,24 @@ let num: String = gen_enum("1,100".to_string());
 // num = "42"
 ```
 
+#### private ipv4
+
+Creates a private IPv4 address in one of these 3 ranges:
+- 10.0.0.0 – 10.255.255.255
+- 172.16.0.0 – 172.31.255.255
+- 192.168.0.0 – 192.168.255.255
+
+Function signature
+```rust
+gen_private_ip(input: usize) -> String
+```
+
+Example call
+```rust
+let private_ipv4: String = gen_private_ipv4(10);
+// num = 10.64.197.255
+```
+
 ### Corpora generator
 [⬆️ Back to Top](#table-of-contents)
 

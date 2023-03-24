@@ -302,4 +302,14 @@ mod tests {
             }
         }
     }
+
+    #[test]
+    fn test_gen_private_ipv4_first_block() {
+        let rand_ip_10 = gen_private_ipv4(10);
+        let rand_ip_172 = gen_private_ipv4(172);
+        let rand_ip_192 = gen_private_ipv4(192);
+        assert!(rand_ip_10.starts_with("10"));
+        assert!(rand_ip_172.starts_with("172"));
+        assert!(rand_ip_192.starts_with("192"));
+    }
 }

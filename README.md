@@ -18,8 +18,8 @@
     - [email](#email)
     - [username](#username)
     - [domain](#domain)
-    - [gen_http_method](#gen_http_method)
-    - [gen_ipv4](#gen_ipv4)
+    - [http method](#http-method)
+    - [ipv4](#ipv4)
   - [Generators with arguments](#generators-with-arguments)
     - [enum](#enum)
     - [int](#int)
@@ -45,7 +45,7 @@ Add the library as dependency to your `Cargo.toml`.
 
 ```
 [dependencies]
-fakedata_generator = "0.1.0"
+fakedata_generator = "0.3"
 ```
 
 Now the the library can be loaded with `use fakedata_generator::*`.    
@@ -116,7 +116,7 @@ let domain: String = gen_domain();
 // domain = "names.us"
 ```
 
-#### gen_http_method
+#### http method
 
 Return a random HTTP method from a defined list.
 
@@ -134,7 +134,7 @@ let method: String = gen_http_method();
 ```
 
 
-#### gen_ipv4
+#### ipv4
 
 Returns a random IP address. Generates four numbers in the range of 0 - 255 which are written out in the format `{}.{}.{}.{}`. 
 
@@ -186,9 +186,12 @@ let num: String = gen_enum("1,100".to_string());
 #### private ipv4
 
 Creates a private IPv4 address in one of these 3 ranges:
+
 - 10.0.0.0 – 10.255.255.255
 - 172.16.0.0 – 172.31.255.255
 - 192.168.0.0 – 192.168.255.255
+
+The `input` is the number of the first block and can be `10`, `172`, or `192`. If an invalid value is specified it defaults to `10`.
 
 Function signature
 ```rust

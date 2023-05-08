@@ -1,7 +1,7 @@
 # `fakedata_generator`
 > A rust library to generate fake data
 
-!["data generator for Rust"](assets/brand/github_header.png)
+!["data generator for Rust"](assets/brand/github-header.png)
 
 ![Build Status](https://github.com/KevinGimbel/fakedata_generator/actions/workflows/rust.yml/badge.svg)
 ![Coverage](assets/coverage/flat.svg)
@@ -10,6 +10,7 @@
 
 ## Table of contents
 <!-- BEGIN mktoc -->
+
 - [Table of contents](#table-of-contents)
 - [About](#about)
 - [Usage](#usage)

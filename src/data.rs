@@ -40,7 +40,7 @@ fn get_dataset(key: &str) -> Result<JSONDataset, Box<dyn Error>> {
 /// `gen_switch` is a special generator that gets its data in JSON format taken from the [Corpora Project](https://github.com/dariusk/corpora). A copy of the entire Corpora project is included in the `data` directory.
 /// Not all data sets are available as of now. See the [src/corpora.rs](https://github.com/kevingimbel/fakedata_generator/blob/master/src/corpora.rs) file for all available sets.
 ///
-/// In addition TLDs are generated from https://data.iana.org/TLD/tlds-alpha-by-domain.txt
+/// In addition TLDs are generated from <https://data.iana.org/TLD/tlds-alpha-by-domain.txt>
 ///
 /// Possible input values:
 ///   - `cat`

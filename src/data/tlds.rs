@@ -1,4 +1,4 @@
-// Module tlds provides a list of valid TLDs taken from https://data.iana.org/TLD/tlds-alpha-by-domain.txt
+// Module tlds provides a list of valid TLDs taken from <https://data.iana.org/TLD/tlds-alpha-by-domain.txt>
 // last updated Wed Mar 22 09:02:36 CET 2023
 // this file is generated with the update-tlds.sh file
 

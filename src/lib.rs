@@ -35,7 +35,7 @@ pub fn gen_username() -> String {
 /// * for
 /// * testing
 ///
-/// Possible Top-Level Domains (TLDs): list based on https://data.iana.org/TLD/tlds-alpha-by-domain.txt
+/// Possible Top-Level Domains (TLDs): list based on <https://data.iana.org/TLD/tlds-alpha-by-domain.txt>
 ///
 /// ## Example
 /// ```rust
@@ -53,9 +53,9 @@ pub fn gen_domain() -> String {
 ///
 /// ## Example
 /// ```rust
-///use fakedata_generator::gen_email;
-///let email: String = gen_email();
-/// // email => devankosha@hmail.com
+/// use playground::gen_email;
+/// let email: String = gen_email();
+/// assert_ne!(email, "");
 /// ```
 pub fn gen_email() -> String {
     let user = gen_username();
@@ -88,7 +88,7 @@ pub fn gen_enum(input: String) -> String {
     return format!("{}", args[index]); //String::from(args[index]);
 }
 
-/// Return random HTTP Method, taken from https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+/// Return random HTTP Method, taken from <https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods>
 /// Possible values:
 /// * GET
 /// * HEAD

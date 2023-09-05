@@ -24,4 +24,4 @@ EOF
 )
 
 # Overwrite the tlds.rs file
-echo "$TMPL" > ../src/data/tlds.rs
+echo "$TMPL" > src/data/tlds.rs

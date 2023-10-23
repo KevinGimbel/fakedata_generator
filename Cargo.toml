@@ -11,3 +11,4 @@ repository = "https://github.com/kevingimbel/fakedata_generator"
 rand = "0.8.5"
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
+passt = "0.3.0"

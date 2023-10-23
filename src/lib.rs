@@ -1,4 +1,5 @@
 extern crate rand;
+use passt::Passt;
 use rand::Rng;
 
 pub mod data;
@@ -21,6 +22,34 @@ pub fn gen_username() -> String {
         "devankoshal,jesseddy,ahmadajmi,KarimMove,benefritz,meln1ks,shaneIxD,BryanHorsey,AnthraX,AmbientTech,CrucifiX,BronzeGamer,Scarface,b0rnc0nfused,XxX_SlAyEr_XxX",
     ));
     return user;
+}
+
+/// Returns a random password (= string of random chars)
+///
+/// ## Example
+/// ```rust
+/// use fakedata_generator::gen_password;
+/// let pw: String = gen_password(32);
+/// // pw => gXPMWpCYRbMexDxRdjRGPA2oyR0ABIJv
+/// assert!(pw.len() == 32);
+/// ```
+pub fn gen_password(password_length: i32) -> String {
+    let password = Passt::random_password(password_length, None);
+    return password;
+}
+
+/// Returns a random password (= string of random chars) with special chars
+///
+/// ## Example
+/// ```rust
+/// use fakedata_generator::gen_password_with_special_chars;
+/// let pw: String = gen_password_with_special_chars(64);
+/// // pw => ;w7f`av-f4l:1&n/010&ap0bPnlLiRn0S+.%C+)X?I9N_5=)uO)<:3+°iQH?T(y-
+/// assert!(pw.chars().collect::<Vec<_>>().len() == 64);
+/// ```
+pub fn gen_password_with_special_chars(password_length: i32) -> String {
+    let password = Passt::random_password(password_length, Some(true));
+    return password;
 }
 
 /// Generate a random domain name from a small list of predefined values
@@ -53,9 +82,10 @@ pub fn gen_domain() -> String {
 ///
 /// ## Example
 /// ```rust
-/// use playground::gen_email;
+/// use fakedata_generator::gen_email;
 /// let email: String = gen_email();
 /// assert_ne!(email, "");
+/// assert!(email.contains("@"));
 /// ```
 pub fn gen_email() -> String {
     let user = gen_username();
@@ -104,7 +134,7 @@ pub fn gen_enum(input: String) -> String {
 /// ```rust
 /// use fakedata_generator::gen_http_method;
 /// let method: String = gen_http_method();
-/// // method = "GET"
+/// assert!(["GET", "HEAD", "POST", "PUT", "DELETE", "CONNECT", "OPTIONS", "TRACE", "PATCH"].contains(&method.as_str()));
 /// ```
 pub fn gen_http_method() -> String {
     let args = vec![
@@ -124,8 +154,8 @@ pub fn gen_http_method() -> String {
 /// ## Example
 ///```rust
 ///use fakedata_generator::gen_int;
-///let i: String = gen_int("1,100".to_string());
-/// // i = 42
+///let i = gen_int("1,100".to_string()).parse::<i32>().unwrap();
+/// assert!(i <= 100 && i >= 1)
 /// ```
 pub fn gen_int(input: String) -> String {
     let mut i1: i32 = 0;

@@ -33,8 +33,8 @@ pub fn gen_username() -> String {
 /// // pw => gXPMWpCYRbMexDxRdjRGPA2oyR0ABIJv
 /// assert!(pw.len() == 32);
 /// ```
-pub fn gen_password(password_length: i32) -> String {
-    let password = Passt::random_password(password_length, None);
+pub fn gen_password(password_length: usize) -> String {
+    let password = Passt::random_password(password_length as i32, None);
     return password;
 }
 
@@ -47,8 +47,8 @@ pub fn gen_password(password_length: i32) -> String {
 /// // pw => ;w7f`av-f4l:1&n/010&ap0bPnlLiRn0S+.%C+)X?I9N_5=)uO)<:3+°iQH?T(y-
 /// assert!(pw.chars().collect::<Vec<_>>().len() == 64);
 /// ```
-pub fn gen_password_with_special_chars(password_length: i32) -> String {
-    let password = Passt::random_password(password_length, Some(true));
+pub fn gen_password_with_special_chars(password_length: usize) -> String {
+    let password = Passt::random_password(password_length as i32, Some(true));
     return password;
 }
 

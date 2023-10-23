@@ -25,6 +25,9 @@
     - [enum](#enum)
     - [int](#int)
     - [private ipv4](#private-ipv4)
+    - [passwords](#passwords)
+      - [Without special chars](#without-special-chars)
+      - [With special chars](#with-special-chars)
   - [Corpora generator](#corpora-generator)
 - [Example](#example)
 - [Contributing](#contributing)
@@ -203,6 +206,40 @@ Example call
 ```rust
 let private_ipv4: String = gen_private_ipv4(10);
 // num = 10.64.197.255
+```
+
+#### passwords
+
+##### Without special chars
+Creates a random string.
+
+The `input` is the number of characters the password should consist of.
+
+Function signature
+```rust
+gen_password(input: usize) -> String
+```
+
+Example call
+```rust
+let pw: String = gen_password(32);
+// pw = "bNNpAmShvQYbKbMdhByK17lqaFcgarrF"
+```
+
+##### With special chars
+Creates a random string with special chars.
+
+The `input` is the number of characters the password should consist of.
+
+Function signature
+```rust
+gen_password_with_special_chars(input: usize) -> String
+```
+
+Example call
+```rust
+let pw: String = gen_password_with_special_chars(32);
+// pw = "F=>:e+KX;Uu/Zg#i*MQN//6r%a^K?K°0"
 ```
 
 ### Corpora generator

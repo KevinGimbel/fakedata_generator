@@ -245,7 +245,9 @@ let pw: String = gen_password_with_special_chars(32);
 ### Corpora generator
 [⬆️ Back to Top](#table-of-contents)
 
-`gen_corpora_switch` is a special generator that gets its data in JSON format taken from the [Corpora Project](https://github.com/dariusk/corpora). A copy of the entire Corpora project is included in the `data` directory.
+`gen_corpora_switch` is deprecated and should not be used anymore.
+
+Instead there's a new `gen_switch` function that gets its data in JSON format taken from the [Corpora Project](https://github.com/dariusk/corpora). A copy of the entire Corpora project is included in the `data` directory.
 Not all data sets are available as of now. See the [src/corpora/data.rs](https://github.com/kevingimbel/fakedata_generator/blob/master/src/corpora/data.rs) file for all available sets.
 
 Possible input values: 
@@ -261,15 +263,15 @@ Each of these will return a random word from the list.
 
 Function signature
 ```rust
-gen_corpora_switch(input: String) -> String
+gen_switch(input: String) -> String
 ```
 
 Example call
 ```rust
-let word: String = gen_corpora_switch("cat".to_string());
+let word: String = gen_switch("cat".to_string());
 // word = "European Shorthair"
 
-let fabric: String = gen_corpora_switch("fabric".to_string());
+let fabric: String = gen_switch("fabric".to_string());
 // word = "longcloth"
 ```
 

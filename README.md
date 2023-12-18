@@ -49,7 +49,7 @@ Add the library as dependency to your `Cargo.toml`.
 
 ```
 [dependencies]
-fakedata_generator = "0.3"
+fakedata_generator = "0.4"
 ```
 
 Now the the library can be loaded with `use fakedata_generator::*`.    

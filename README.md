@@ -29,7 +29,7 @@
       - [Without special chars](#without-special-chars)
       - [With special chars](#with-special-chars)
   - [Corpora generator](#corpora-generator)
-- [Example](#example)
+- [Examples](#examples)
 - [Contributing](#contributing)
   - [Where to start?](#where-to-start)
   - [Tooling](#tooling)
@@ -272,6 +272,7 @@ Possible input values:
 - `gemstone`
 - `mood`
 - `fabric`
+- `tvshow`
 
 Each of these will return a random word from the list.
 
@@ -289,7 +290,7 @@ let fabric: String = gen_switch("fabric".to_string());
 // word = "longcloth"
 ```
 
-## Example
+## Examples
 [⬆️ Back to Top](#table-of-contents)
 
 The following examples show how `fakedata_generator` can be used in a Rust project.

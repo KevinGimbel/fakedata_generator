@@ -246,16 +246,16 @@ mod tests {
 
     #[test]
     fn test_gen_int() {
-        let mut res = gen_int("1,10".to_string()).parse::<i32>().unwrap();
+        let mut res = gen_int("1,10").parse::<i32>().unwrap();
         assert_eq!(true, (res >= 1 && res <= 10));
 
-        res = gen_int("10,300".to_string()).parse::<i32>().unwrap();
+        res = gen_int("10,300").parse::<i32>().unwrap();
         assert_eq!(true, (res >= 10 && res <= 300));
 
-        res = gen_int("300000,999999".to_string()).parse::<i32>().unwrap();
+        res = gen_int("300000,999999").parse::<i32>().unwrap();
         assert_eq!(true, (res >= 300000 && res <= 999999));
 
-        res = gen_int("99999999,1000000000".to_string())
+        res = gen_int("99999999,1000000000")
             .parse::<i32>()
             .unwrap();
         assert_eq!(true, (res >= 99999999 && res <= 1000000000));

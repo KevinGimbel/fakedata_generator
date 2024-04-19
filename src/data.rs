@@ -9,6 +9,7 @@ use std::error::Error;
 
 pub mod corpora;
 pub mod tlds;
+pub mod primes;
 
 /// JSONDataset represents a generic data structure for storing the parsed JSON. Each JSON taken
 /// from Corpora has a `data` field which is an Array of Strings in JSON (= Vec<String> in Rust).
@@ -78,4 +79,12 @@ pub fn gen_switch(name: String) -> String {
 // gen_corpora_switch is deprecated and should not be used, for now it is a wrapper around gen_switch()
 pub fn gen_corpora_switch(name: String) -> String {
     return gen_switch(name);
+}
+
+// gen_prime returns a random of the first 1000 prime numbers
+pub fn gen_prime() -> usize {
+    let mut rnd = rand::thread_rng();
+    let index = rnd.gen_range(0..primes::DATA_PRIMES.len() - 1);
+    
+    primes::DATA_PRIMES[index]
 }

@@ -240,6 +240,8 @@ pub fn gen_private_ipv4(starting_range: usize) -> String {
 
 #[cfg(test)]
 mod tests {
+    use crate::data::gen_prime;
+
     use super::*;
 
     #[test]
@@ -343,5 +345,15 @@ mod tests {
         assert!(rand_ip_10.starts_with("10"));
         assert!(rand_ip_172.starts_with("172"));
         assert!(rand_ip_192.starts_with("192"));
+    }
+
+
+    #[test]
+    fn test_gen_prime() {
+        // very much not validating primes here, 
+        // but instead just the bounds of the array.
+        let prime = gen_prime();
+        assert!(prime > 1);
+        assert!(prime <= 8017);
     }
 }

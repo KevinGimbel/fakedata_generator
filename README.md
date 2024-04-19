@@ -21,7 +21,7 @@
     - [domain](#domain)
     - [http method](#http-method)
     - [ipv4](#ipv4)
-  - [Generators with arguments](#generators-with-arguments)
+    - [gen_prime](#gen_prime)
     - [enum](#enum)
     - [int](#int)
     - [private ipv4](#private-ipv4)
@@ -153,6 +153,20 @@ let ip: String = gen_ipv4();
 // ip = "168.11.40.75"
 ```
 
+#### gen_prime
+
+Returns one of the first 1000 prime numners, randomely.
+
+Function signature
+```rust
+gen_prime() -> usize
+``` 
+
+Example call
+```rust
+let prime: usize = gen_prime();
+// prime = 6323
+```
 ### Generators with arguments
 [⬆️ Back to Top](#table-of-contents)
 

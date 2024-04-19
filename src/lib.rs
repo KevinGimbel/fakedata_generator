@@ -347,7 +347,6 @@ mod tests {
         assert!(rand_ip_192.starts_with("192"));
     }
 
-
     #[test]
     fn test_gen_prime() {
         // very much not validating primes here, 
@@ -356,4 +355,19 @@ mod tests {
         assert!(prime > 1);
         assert!(prime <= 8017);
     }
+
+    #[test]
+    fn test_gen_tvshows() {
+        // just validating we get something back here.
+        let show = data::gen_switch("tvshow".into());
+        assert_ne!(show, "");
+        assert_ne!(show, "Error: dataset not found");
+    }
+
+    #[test]
+    fn test_gen_not_available() {
+        let show = data::gen_switch("does-not-exist".into());
+        assert_eq!(show, "Error: dataset not found");
+    }
+        
 }

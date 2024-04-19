@@ -30,6 +30,7 @@ fn get_dataset(key: &str) -> Result<JSONDataset, Box<dyn Error>> {
         "gemstone" => corpora::DATA_GEMSTONE,
         "mood" => corpora::DATA_MOOD,
         "tlds" => tlds::DATA_TLDS,
+        "tvshow" => corpora::DATA_TVSHOWS,
         _ => "",
     };
 
@@ -52,6 +53,7 @@ fn get_dataset(key: &str) -> Result<JSONDataset, Box<dyn Error>> {
 ///   - `mood`
 ///   - `fabric`
 ///   - `tlds`
+///   - `tvshow`
 ///
 /// Each of these will return a random word from the list.
 ///
@@ -65,7 +67,13 @@ fn get_dataset(key: &str) -> Result<JSONDataset, Box<dyn Error>> {
 /// ```
 pub fn gen_switch(name: String) -> String {
     let n: &str = name.as_str();
-    let data = get_dataset(n).unwrap().data;
+    let data = match get_dataset(n) {
+        Ok(val) => val.data,
+        Err(err) => {
+            eprintln!("Failed getting dataset for {}. {}", name, err);
+            return "Error: dataset not found".into()
+        }
+    };
 
     let mut rnd = rand::thread_rng();
     let mut index: usize = 0;
@@ -85,6 +93,6 @@ pub fn gen_corpora_switch(name: String) -> String {
 pub fn gen_prime() -> usize {
     let mut rnd = rand::thread_rng();
     let index = rnd.gen_range(0..primes::DATA_PRIMES.len() - 1);
-    
+
     primes::DATA_PRIMES[index]
 }

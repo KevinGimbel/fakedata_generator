@@ -3907,8 +3907,7 @@ pub const DATA_MOOD: &str = r#"
 
 pub const DATA_TVSHOWS: &str = r#"
 { 
-  "data":
-    [
+  "data": [
       "20/20",
       "21 Jump Street",
       "24",

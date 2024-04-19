@@ -5,7 +5,7 @@ use rand::Rng;
 pub mod data;
 
 fn parse_args_to_vec(input: &str) -> Vec<&str> {
-    let args: Vec<&str> = input.split(",").collect();
+    let args: Vec<&str> = input.split(",").clone().collect();
     return args;
 }
 
@@ -107,15 +107,16 @@ pub fn gen_email() -> String {
 ///let word: String = gen_enum("some,random,words".to_string());
 /// // word = "random"
 /// ```
-pub fn gen_enum(input: String) -> String {
-    let args = parse_args_to_vec(&input);
+pub fn gen_enum(input: impl ToString) -> String {
+    let input_var = input.to_string();
+    let args = parse_args_to_vec(input_var.as_str());
     let mut rnd = rand::thread_rng();
     let mut index: usize = 0;
     if args.len() - 1 > 0 {
         index = rnd.gen_range(0..args.len() - 1);
     }
 
-    return format!("{}", args[index]); //String::from(args[index]);
+    return format!("{}", args[index]);
 }
 
 /// Return random HTTP Method, taken from <https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods>
@@ -157,10 +158,11 @@ pub fn gen_http_method() -> String {
 ///let i = gen_int("1,100".to_string()).parse::<i32>().unwrap();
 /// assert!(i <= 100 && i >= 1)
 /// ```
-pub fn gen_int(input: String) -> String {
+pub fn gen_int(input: impl ToString) -> String {
     let mut i1: i32 = 0;
     let mut i2: i32 = 0;
-    let args = parse_args_to_vec(&input);
+    let input_val = input.to_string();
+    let args = parse_args_to_vec(&input_val.as_str());
     let mut rnd = rand::thread_rng();
 
     if args.len() == 0 {
@@ -259,7 +261,7 @@ mod tests {
 
     #[test]
     fn test_gen_enum() {
-        let mut words: String = gen_enum("hello,hola,hallo".to_string());
+        let mut words: String = gen_enum("hello,hola,hallo");
         let mut res = match words.as_str() {
             "hello" => true,
             "hola" => true,
@@ -268,7 +270,7 @@ mod tests {
         };
         assert_eq!(true, res);
 
-        words = gen_enum("a,b,c,d,e,f,g,h,i,j".to_string());
+        words = gen_enum("a,b,c,d,e,f,g,h,i,j");
         res = match words.as_str() {
             "a" => true,
             "b" => true,

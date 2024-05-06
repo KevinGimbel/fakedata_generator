@@ -29,7 +29,7 @@
       - [Without special chars](#without-special-chars)
       - [With special chars](#with-special-chars)
   - [Corpora generator](#corpora-generator)
-- [Examples](#examples)
+- [Users](#users)
 - [Contributing](#contributing)
   - [Where to start?](#where-to-start)
   - [Tooling](#tooling)
@@ -290,14 +290,15 @@ let fabric: String = gen_switch("fabric".to_string());
 // word = "longcloth"
 ```
 
-## Examples
+## Users
 [⬆️ Back to Top](#table-of-contents)
 
-The following examples show how `fakedata_generator` can be used in a Rust project.
+The following is a list of projects using `fakedata_generator`. Want to have your project added? Open a PR! 🧡
 
 | Name | Description | Repository |
 |------|-------------|------------|
 | `fakedata_server` | A HTTP API providing random values based on `fakedata_generator` data. | [View code](https://github.com/kevingimbel/fakedata_server) |
+| `vector` | [vector](https://github.com/vectordotdev/vector) is a  high-performance observability data pipeline. They use `fakedata_generator` as part of their test setup | [View code](https://github.com/vectordotdev/vector/tree/master/lib/fakedata) |
 
 
 ## Contributing

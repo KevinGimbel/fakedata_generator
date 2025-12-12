@@ -19,6 +19,14 @@ build:
 test:
     cargo test
 
-# Remove compiled files
+# Update coverage badge
+coverage:
+    ./helpers/coverage.sh
+
+# Update list of Top-Level Domains in src/data/tlds.rs
+update-tlds:
+    ./helpers/update-tlds.sh
+
+# Remove ./target directory which contains a lot of files
 cleanup:
     rm -r target

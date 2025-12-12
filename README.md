@@ -320,6 +320,9 @@ Here are some good places to start:
 - [mktoc](https://github.com/KevinGimbel/mktoc) is used for table of content generation in the README.md
 - [grcov](https://github.com/mozilla/grcov) is used to generate the coverage badge
     - this is currently done by hand and not by CI, run `helpers/coverage.sh` to update the badge
+- [nix](https://nix.dev/) for the dev environment (packages, tools, ...)
+
+The nix environment can be setup with `nix develop`. It contains all tools needed to work with this code base, in pre-defined versions so everybody gets the same environment and the same packages.
 
 ## Code of Conduct
 [⬆️ Back to Top](#table-of-contents)

@@ -110,10 +110,10 @@ pub fn gen_email() -> String {
 pub fn gen_enum(input: impl ToString) -> String {
     let input_var = input.to_string();
     let args = parse_args_to_vec(input_var.as_str());
-    let mut rnd = rand::thread_rng();
+    let mut rnd = rand::rng();
     let mut index: usize = 0;
     if args.len() - 1 > 0 {
-        index = rnd.gen_range(0..args.len() - 1);
+        index = rnd.random_range(0..args.len() - 1);
     }
 
     return format!("{}", args[index]);
@@ -141,9 +141,9 @@ pub fn gen_http_method() -> String {
     let args = vec![
         "GET", "HEAD", "POST", "PUT", "DELETE", "CONNECT", "OPTIONS", "TRACE", "PATCH",
     ];
-    let mut rnd = rand::thread_rng();
+    let mut rnd = rand::rng();
     // the length of the args vec doesn't change so we don't need to calculate it.
-    let index: usize = rnd.gen_range(0..8);
+    let index: usize = rnd.random_range(0..8);
 
     return format!("{}", args[index]); // String::from(args[index]);
 }
@@ -163,7 +163,7 @@ pub fn gen_int(input: impl ToString) -> String {
     let mut i2: i32 = 0;
     let input_val = input.to_string();
     let args = parse_args_to_vec(&input_val.as_str());
-    let mut rnd = rand::thread_rng();
+    let mut rnd = rand::rng();
 
     if args.len() == 0 {
         return String::from("0");
@@ -179,7 +179,7 @@ pub fn gen_int(input: impl ToString) -> String {
         i2 = args[0].parse().unwrap();
     }
 
-    let rand_number = rnd.gen_range(i1..i2);
+    let rand_number = rnd.random_range(i1..i2);
 
     return rand_number.to_string();
 }
@@ -193,11 +193,11 @@ pub fn gen_int(input: impl ToString) -> String {
 /// // => ipv4 = 172.129.23.201
 /// ```
 pub fn gen_ipv4() -> String {
-    let mut rnd = rand::thread_rng();
-    let a = rnd.gen_range(1..255);
-    let b = rnd.gen_range(1..255);
-    let c = rnd.gen_range(1..255);
-    let d = rnd.gen_range(1..255);
+    let mut rnd = rand::rng();
+    let a = rnd.random_range(1..255);
+    let b = rnd.random_range(1..255);
+    let c = rnd.random_range(1..255);
+    let d = rnd.random_range(1..255);
 
     return format!("{}.{}.{}.{}", a, b, c, d);
 }
@@ -219,7 +219,7 @@ pub fn gen_ipv4() -> String {
 /// // => private_ipv4 = 10.128.20.21
 /// ```
 pub fn gen_private_ipv4(starting_range: usize) -> String {
-    let mut rnd = rand::thread_rng();
+    let mut rnd = rand::rng();
     let a = match starting_range {
         10 => 10,
         172 => 172,
@@ -227,13 +227,13 @@ pub fn gen_private_ipv4(starting_range: usize) -> String {
         _ => 10,
     };
     let b = match a {
-        10 => rnd.gen_range(1..255),
-        172 => rnd.gen_range(16..31),
+        10 => rnd.random_range(1..255),
+        172 => rnd.random_range(16..31),
         192 => 168,
         _ => 0,
     };
-    let c = rnd.gen_range(1..255);
-    let d = rnd.gen_range(1..255);
+    let c = rnd.random_range(1..255);
+    let d = rnd.random_range(1..255);
 
     return format!("{}.{}.{}.{}", a, b, c, d);
 }

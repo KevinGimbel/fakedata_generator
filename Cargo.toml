@@ -8,7 +8,7 @@ description = "Generate fake data with various generators."
 repository = "https://github.com/KevinGimbel/fakedata_generator"
 
 [dependencies]
-rand = "0.8.5"
+rand = "0.9.2"
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
 passt = "0.3.0"

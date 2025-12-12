@@ -153,10 +153,10 @@ pub fn gen_switch(name: String) -> String {
         }
     };
 
-    let mut rnd = rand::thread_rng();
+    let mut rnd = rand::rng();
     let mut index: usize = 0;
     if data.len() - 1 > 0 {
-        index = rnd.gen_range(0..data.len() - 1);
+        index = rnd.random_range(0..data.len() - 1);
     }
 
     return data[index].to_string();
@@ -169,8 +169,8 @@ pub fn gen_corpora_switch(name: String) -> String {
 
 // gen_prime returns a random of the first 1000 prime numbers
 pub fn gen_prime() -> usize {
-    let mut rnd = rand::thread_rng();
-    let index = rnd.gen_range(0..primes::DATA_PRIMES.len() - 1);
+    let mut rnd = rand::rng();
+    let index = rnd.random_range(0..primes::DATA_PRIMES.len() - 1);
 
     primes::DATA_PRIMES[index]
 }

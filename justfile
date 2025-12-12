@@ -34,6 +34,15 @@ update-corpora-rust:
 # Update the corpora submodule in data/corpora
 update-corpora-git:
     git submodule update --init data/corpora
+
+# Return the body for the match function in src/data.rs
+get-corpora-match-body:
+    grep "pub const" src/data/corpora.rs | awk -F':' '{ print $1 }' | awk -F ' ' '{ print "\""tolower(substr($3,6))"\" => corpora::"$3"," }'
+
+# Return a list of all available dataset names, this is used for the function comment and the README!
+get-corpora-available-dataset-names:
+    grep "pub const" src/data/corpora.rs | awk -F':' '{ print $1 }' | awk -F ' ' '{ print tolower(substr($3,6)) }'
+
 # Remove ./target directory which contains a lot of files
 cleanup:
     rm -r target

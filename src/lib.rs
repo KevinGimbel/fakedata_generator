@@ -255,9 +255,7 @@ mod tests {
         res = gen_int("300000,999999").parse::<i32>().unwrap();
         assert_eq!(true, (res >= 300000 && res <= 999999));
 
-        res = gen_int("99999999,1000000000")
-            .parse::<i32>()
-            .unwrap();
+        res = gen_int("99999999,1000000000").parse::<i32>().unwrap();
         assert_eq!(true, (res >= 99999999 && res <= 1000000000));
     }
 
@@ -349,7 +347,7 @@ mod tests {
 
     #[test]
     fn test_gen_prime() {
-        // very much not validating primes here, 
+        // very much not validating primes here,
         // but instead just the bounds of the array.
         let prime = gen_prime();
         assert!(prime > 1);
@@ -358,10 +356,86 @@ mod tests {
 
     #[test]
     fn test_gen_tvshows() {
-        // just validating we get something back here.
+        // tvshow is the old name, this should always be supported! If it breaks,
+        // check the gen_switch values and make sure these singular terms are there:
+        // - "dinosaur"
+        // - "cat"
+        // - "dog"
+        // - "horse"
+        // - "fabric"
+        // - "gemstone"
+        // - "mood"
+        // - "tvshow"
         let show = data::gen_switch("tvshow".into());
         assert_ne!(show, "");
         assert_ne!(show, "Error: dataset not found");
+    }
+
+    #[test]
+    fn test_legacy_switch_gens() {
+        let old_gens = [
+            "dinosaur", "cat", "dog", "horse", "fabric", "gemstone", "mood", "tvshow",
+        ];
+        for gen in old_gens {
+            let show = data::gen_switch(gen.into());
+            assert_ne!(show, "");
+            assert_ne!(show, "Error: dataset not found.");
+        }
+    }
+
+    #[test]
+    fn test_all_switch_gens() {
+        let all_generators = [
+            "cats",
+            "dinosaurs",
+            "dogs",
+            "donkeys",
+            "horses",
+            "tv_shows",
+            "fruits",
+            "pizzatoppings",
+            "herbs",
+            "spices",
+            "mixtures",
+            "teas",
+            "vegetables",
+            "rpgs",
+            "board_games",
+            "wrestling_moves",
+            "countries",
+            "nationalities",
+            "governmentforms",
+            "authors",
+            "bodyparts",
+            "firstnames",
+            "lastnames",
+            "moods",
+            "neutralnames",
+            "occupations",
+            "prefixes",
+            "scientists",
+            "suffixes",
+            "tolkien_character_names",
+            "fabrics",
+            "gemstones",
+            "metals",
+            "packaging",
+            "music_genres",
+            "objects",
+            "flowers",
+            "toxic_plants",
+            "weather_conditions",
+            "sports",
+            "appliances",
+            "new_technologies",
+            "programming_languages",
+        ];
+
+        for gen in all_generators {
+            let show = data::gen_switch(gen.into());
+            assert_ne!(show, "");
+            assert_ne!(show, "Error: dataset not found");
+        }
     }
 
     #[test]
@@ -369,5 +443,4 @@ mod tests {
         let show = data::gen_switch("does-not-exist".into());
         assert_eq!(show, "Error: dataset not found");
     }
-        
 }

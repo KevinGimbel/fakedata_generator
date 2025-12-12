@@ -33,6 +33,8 @@
             # Extra tooling
             mktoc
             grcov
+            jq
+            curl
           ];
           RUST_SRC_PATH = rustPlatform.rustLibSrc;
         };

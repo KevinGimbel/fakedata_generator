@@ -265,14 +265,49 @@ Instead there's a new `gen_switch` function that gets its data in JSON format ta
 Not all data sets are available as of now. See the [src/corpora/data.rs](https://github.com/kevingimbel/fakedata_generator/blob/master/src/corpora/data.rs) file for all available sets.
 
 Possible input values: 
-- `cat`
-- `dog`
-- `horse`
-- `dinosaur`
-- `gemstone`
-- `mood`
-- `fabric`
-- `tvshow`
+- `cats`
+- `dinosaurs`
+- `dogs`
+- `donkeys`
+- `horses`
+- `tv_shows`
+- `fruits`
+- `pizzatoppings`
+- `herbs`
+- `spices`
+- `mixtures`
+- `teas`
+- `vegetables`
+- `rpgs`
+- `board_games`
+- `wrestling_moves`
+- `countries`
+- `nationalities`
+- `governmentforms`
+- `authors`
+- `bodyparts`
+- `firstnames`
+- `lastnames`
+- `moods`
+- `neutralnames`
+- `occupations`
+- `prefixes`
+- `scientists`
+- `suffixes`
+- `tolkien_character_names`
+- `fabrics`
+- `gemstones`
+- `metals`
+- `packaging`
+- `music_genres`
+- `objects`
+- `flowers`
+- `toxic_plants`
+- `weather_conditions`
+- `sports`
+- `appliances`
+- `new_technologies`
+- `programming_languages`
 
 Each of these will return a random word from the list.
 

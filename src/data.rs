@@ -89,16 +89,49 @@ fn get_dataset(key: &str) -> Result<JSONDataset, Box<dyn Error>> {
 /// In addition TLDs are generated from <https://data.iana.org/TLD/tlds-alpha-by-domain.txt>
 ///
 /// Possible input values:
-///   - `cat`
-///   - `dog`
-///   - `horse`
-///   - `dinosaur`
-///   - `gemstone`
-///   - `mood`
-///   - `fabric`
-///   - `tlds`
-///   - `tvshow`
-///   - `fruits`
+///  - `cats`
+/// - `dinosaurs`
+/// - `dogs`
+/// - `donkeys`
+/// - `horses`
+/// - `tv_shows`
+/// - `fruits`
+/// - `pizzatoppings`
+/// - `herbs`
+/// - `spices`
+/// - `mixtures`
+/// - `teas`
+/// - `vegetables`
+/// - `rpgs`
+/// - `board_games`
+/// - `wrestling_moves`
+/// - `countries`
+/// - `nationalities`
+/// - `governmentforms`
+/// - `authors`
+/// - `bodyparts`
+/// - `firstnames`
+/// - `lastnames`
+/// - `moods`
+/// - `neutralnames`
+/// - `occupations`
+/// - `prefixes`
+/// - `scientists`
+/// - `suffixes`
+/// - `tolkien_character_names`
+/// - `fabrics`
+/// - `gemstones`
+/// - `metals`
+/// - `packaging`
+/// - `music_genres`
+/// - `objects`
+/// - `flowers`
+/// - `toxic_plants`
+/// - `weather_conditions`
+/// - `sports`
+/// - `appliances`
+/// - `new_technologies`
+/// - `programming_languages`
 ///
 /// Each of these will return a random word from the list.
 ///

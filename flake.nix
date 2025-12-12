@@ -29,6 +29,10 @@
 
             # Task runner
             just
+
+            # Extra tooling
+            mktoc
+            grcov
           ];
           RUST_SRC_PATH = rustPlatform.rustLibSrc;
         };

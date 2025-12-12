@@ -33,16 +33,15 @@ EOF
 ./helpers/add-corpora-dataset.sh data/corpora/data/foods/fruits.json
 ./helpers/add-corpora-dataset.sh data/corpora/data/foods/pizzaToppings.json
 ./helpers/add-corpora-dataset.sh data/corpora/data/foods/herbs_n_spices.json herbs HERBS
-./helpers/add-corpora-dataset.sh data/corpora/data/foods/herbs_n_spices.json spirces SPICES
+./helpers/add-corpora-dataset.sh data/corpora/data/foods/herbs_n_spices.json spices SPICES
 ./helpers/add-corpora-dataset.sh data/corpora/data/foods/herbs_n_spices.json mixtures MIXTURES
 ./helpers/add-corpora-dataset.sh data/corpora/data/foods/tea.json teas TEAS
 ./helpers/add-corpora-dataset.sh data/corpora/data/foods/vegetables.json
 
 # GAMES
 ./helpers/add-corpora-dataset.sh data/corpora/data/games/rpg/rpg_games.json rpgs RPGS
-./helpers/add-corpora-dataset.sh data/corpora/data/games/board_games.json
-./helpers/add-corpora-dataset.sh data/corpora/data/games/wrestling_moves.json
-
+./helpers/add-corpora-dataset.sh data/corpora/data/games/board_games.json games BOARD_GAMES
+./helpers/add-corpora-dataset.sh data/corpora/data/games/wrestling_moves.json moves WRESTLING_MOVES
 # GEOGRAPHY
 ./helpers/add-corpora-dataset.sh data/corpora/data/geography/countries.json
 ./helpers/add-corpora-dataset.sh data/corpora/data/geography/nationalities.json
@@ -87,7 +86,7 @@ EOF
 
 # TECHNOLOGY
 ./helpers/add-corpora-dataset.sh data/corpora/data/technology/appliances.json
-./helpers/add-corpora-dataset.sh data/corpora/data/technology/new_technologies.json
+./helpers/add-corpora-dataset.sh data/corpora/data/technology/new_technologies.json technologies NEW_TECHNOLOGIES
 ./helpers/add-corpora-dataset.sh data/corpora/data/technology/programming_languages_popular.json programming_languages_popular PROGRAMMING_LANGUAGES
 
 

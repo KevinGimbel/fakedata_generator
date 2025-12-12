@@ -1,7 +1,9 @@
-/target
+target
 **/*.rs.bk
 *.iml
 .idea
 generator/target/
 *.profraw
 Cargo.lock
+
+src/data/corpora.rs.backup

@@ -376,8 +376,8 @@ mod tests {
         let old_gens = [
             "dinosaur", "cat", "dog", "horse", "fabric", "gemstone", "mood", "tvshow",
         ];
-        for gen in old_gens {
-            let show = data::gen_switch(gen.into());
+        for generator in old_gens {
+            let show = data::gen_switch(generator.into());
             assert_ne!(show, "");
             assert_ne!(show, "Error: dataset not found.");
         }
@@ -431,8 +431,8 @@ mod tests {
             "programming_languages",
         ];
 
-        for gen in all_generators {
-            let show = data::gen_switch(gen.into());
+        for generator in all_generators {
+            let show = data::gen_switch(generator.into());
             assert_ne!(show, "");
             assert_ne!(show, "Error: dataset not found");
         }

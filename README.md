@@ -298,7 +298,8 @@ The following is a list of projects using `fakedata_generator`. Want to have you
 | Name | Description | Repository |
 |------|-------------|------------|
 | `fakedata_server` | A HTTP API providing random values based on `fakedata_generator` data. | [View code](https://github.com/kevingimbel/fakedata_server) |
-| `vector` | [vector](https://github.com/vectordotdev/vector) is a  high-performance observability data pipeline. They use `fakedata_generator` as part of their test setup | [View code](https://github.com/vectordotdev/vector/tree/master/lib/fakedata) |
+| `vector` | [vector](https://github.com/vectordotdev/vector) is a  high-performance observability data pipeline. They use `fakedata_generator` as part of their test setup. | [View code](https://github.com/vectordotdev/vector/tree/master/lib/fakedata) |
+| `oxidecomputer/crucible` | Crucible is a distributed network-replicated block storage service. They use `fakedata_generator` as part of their test setup. | [View code](https://github.com/oxidecomputer/crucible/blob/ec87da9b0d8997a8c1c969a11d7d41583526ad20/upstairs/src/volume.rs#L1962) |
 
 
 ## Contributing
@@ -330,4 +331,4 @@ You are expected to follow our [code of conduct](https://github.com/kevingimbel/
 
 [MIT License](https://github.com/kevingimbel/fakedata_generator/blob/master/LICENSE) Copyright (c) 2019 Kevin Gimbel
 
-Special Thanks to the Rust Community, Rust Language Maintainers, and JetBrains for IntelliJ IDEA. See [NOTICE](https://github.com/kevingimbel/fakedata_generator/blob/master/NOTICE) for full list. 
+Special Thanks to the Rust Community, Rust Language Maintainers, and JetBrains for IntelliJ IDEA. See [NOTICE](https://github.com/kevingimbel/fakedata_generator/blob/master/NOTICE) for full list.

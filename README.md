@@ -318,10 +318,10 @@ gen_switch(input: String) -> String
 
 Example call
 ```rust
-let word: String = gen_switch("cat".to_string());
+let word: String = gen_switch("cats".to_string());
 // word = "European Shorthair"
 
-let fabric: String = gen_switch("fabric".to_string());
+let fabric: String = gen_switch("fabrics".to_string());
 // word = "longcloth"
 ```
 

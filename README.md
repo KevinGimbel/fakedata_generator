@@ -262,7 +262,7 @@ let pw: String = gen_password_with_special_chars(32);
 `gen_corpora_switch` is deprecated and should not be used anymore.
 
 Instead there's a new `gen_switch` function that gets its data in JSON format taken from the [Corpora Project](https://github.com/dariusk/corpora). A copy of the entire Corpora project is included in the `data` directory.
-Not all data sets are available as of now. See the [src/corpora/data.rs](https://github.com/kevingimbel/fakedata_generator/blob/master/src/corpora/data.rs) file for all available sets.
+Not all data sets are available as of now. See the [src/data/corpora.rs](https://github.com/KevinGimbel/fakedata_generator/blob/master/src/data/corpora.rs) file for all available sets.
 
 Possible input values: 
 - `cats`

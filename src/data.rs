@@ -162,7 +162,8 @@ pub fn gen_switch(name: String) -> String {
     return data[index].to_string();
 }
 
-// gen_corpora_switch is deprecated and should not be used, for now it is a wrapper around gen_switch()
+// gen_corpora_switch is deprecated and should not be used, use `gen_switch` instead.
+// `gen_corpora_switch` may be removed in a future release.
 pub fn gen_corpora_switch(name: String) -> String {
     return gen_switch(name);
 }

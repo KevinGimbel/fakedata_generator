@@ -241,6 +241,7 @@ pub fn gen_private_ipv4(starting_range: usize) -> String {
 #[cfg(test)]
 mod tests {
     use crate::data::gen_prime;
+    use crate::data::gen_emoji;
 
     use super::*;
 
@@ -352,6 +353,16 @@ mod tests {
         let prime = gen_prime();
         assert!(prime > 1);
         assert!(prime <= 8017);
+    }
+
+    #[test]
+    fn test_gen_emoji() {
+        // not really validating emojis, but getting a bit of random
+        // validation in.
+        for _ in 1..100 {
+            let emoji = gen_emoji();
+            assert!(!emoji.is_empty());
+        }
     }
 
     #[test]

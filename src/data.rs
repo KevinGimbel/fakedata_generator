@@ -10,6 +10,7 @@ use std::error::Error;
 pub mod corpora;
 pub mod primes;
 pub mod tlds;
+pub mod emojis;
 
 /// JSONDataset represents a generic data structure for storing the parsed JSON. Each JSON taken
 /// from Corpora has a `data` field which is an Array of Strings in JSON (= Vec<String> in Rust).
@@ -174,4 +175,12 @@ pub fn gen_prime() -> usize {
     let index = rnd.random_range(0..primes::DATA_PRIMES.len() - 1);
 
     primes::DATA_PRIMES[index]
+}
+
+
+pub fn gen_emoji() -> String {
+    let mut rnd = rand::rng();
+    let index = rnd.random_range(0..emojis::DATA_EMOJIS.len() - 1);
+
+    emojis::DATA_EMOJIS[index].into()
 }

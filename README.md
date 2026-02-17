@@ -167,6 +167,23 @@ Example call
 let prime: usize = gen_prime();
 // prime = 6323
 ```
+
+#### gen_emoji
+
+Returns a random emoji from the list defined in [src/data/emojis.rs](src/data/emojis.rs). 
+
+The list is automatically generated from [https://www.unicode.org/Public/17.0.0/emoji/emoji-test.txt](https://www.unicode.org/Public/17.0.0/emoji/emoji-test.txt) using the script in [helpers/add-emojis.nu](helpers/add-emojis.nu)
+
+Function signature
+```rust
+gen_emoji() -> usize
+``` 
+
+Example call
+```rust
+let emoji: String = gen_emoji();
+// emoji = ✊
+```
 ### Generators with arguments
 [⬆️ Back to Top](#table-of-contents)
 
@@ -184,7 +201,6 @@ Example call
 let word: String = gen_enum("hello,hola,hallo".to_string());
 // word = "hola"
 ```
-
 
 #### int
 

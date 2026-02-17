@@ -1,11 +1,22 @@
 [package]
 name = "fakedata_generator"
-version = "0.6.0"
+version = "0.7.0"
 authors = ["Kevin Gimbel <kevin@gimbel.dev>"]
 edition = "2024"
 license = "MIT"
 description = "Generate fake data with various generators."
 repository = "https://github.com/KevinGimbel/fakedata_generator"
+exclude = [
+    ".github",
+    ".vscode",
+    "assets",
+    "helpers",
+    ".gitmodules",
+    ".gitignore",
+    "*.nix",
+    "flake.lock",
+    "justfile"
+]
 
 [dependencies]
 rand = "0.9.2"

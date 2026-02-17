@@ -35,6 +35,7 @@
             grcov
             jq
             curl
+            nushell
           ];
           RUST_SRC_PATH = rustPlatform.rustLibSrc;
         };

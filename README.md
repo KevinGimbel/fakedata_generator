@@ -11,6 +11,7 @@
 ## Table of contents
 <!-- BEGIN mktoc -->
 
+- [`fakedata_generator`](#fakedata_generator)
 - [Table of contents](#table-of-contents)
 - [About](#about)
 - [Usage](#usage)
@@ -22,6 +23,7 @@
     - [http method](#http-method)
     - [ipv4](#ipv4)
     - [gen_prime](#gen_prime)
+    - [gen_emoji](#gen_emoji)
     - [enum](#enum)
     - [int](#int)
     - [private ipv4](#private-ipv4)

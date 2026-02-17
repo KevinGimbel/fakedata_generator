@@ -1,6 +1,6 @@
 [package]
 name = "fakedata_generator"
-version = "0.7.0"
+version = "0.7.1"
 authors = ["Kevin Gimbel <kevin@gimbel.dev>"]
 edition = "2024"
 license = "MIT"

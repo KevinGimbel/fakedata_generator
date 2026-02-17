@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.7.1 - 2026-02-17
+
+### Fixed
+
+Fix some formatting in the README and docs. 
+
 ## v0.7.0 - 2026-02-17
 
 ### Added

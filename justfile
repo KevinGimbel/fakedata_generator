@@ -9,7 +9,7 @@ list:
 
 # Start a nix dev environment with `nix develop`
 dev:
-    nix develop --ignore-environment
+    nix develop . --command zsh -l
 
 # Run cargo build with --release flag to build the binary
 build:
@@ -26,6 +26,10 @@ coverage:
 # Update list of Top-Level Domains in src/data/tlds.rs
 update-tlds:
     ./helpers/update-tlds.sh
+
+# Update the list of emojis
+update-emoji:
+    ./helpers/add-emojis.nu
 
 # Update the rust data file with values from corpora JSON files
 update-corpora-rust:

@@ -351,9 +351,13 @@ The following is a list of projects using `fakedata_generator`. Want to have you
 | Name | Description | Repository |
 |------|-------------|------------|
 | `fakedata_server` | A HTTP API providing random values based on `fakedata_generator` data. | [View code](https://github.com/kevingimbel/fakedata_server) |
-| `vector` | [vector](https://github.com/vectordotdev/vector) is a  high-performance observability data pipeline. They use `fakedata_generator` as part of their test setup. | [View code](https://github.com/vectordotdev/vector/tree/master/lib/fakedata) |
 | `oxidecomputer/crucible` | Crucible is a distributed network-replicated block storage service. They use `fakedata_generator` as part of their test setup. | [View code](https://github.com/oxidecomputer/crucible/blob/ec87da9b0d8997a8c1c969a11d7d41583526ad20/upstairs/src/volume.rs#L1962) |
 
+### Past users
+
+| Name | Description | Repository |
+|------|-------------|------------|
+| `vector` | [vector](https://github.com/vectordotdev/vector) is a  high-performance observability data pipeline. They used `fakedata_generator` as part of their test setup, but removed it and inlined the required functions in [this PR](https://github.com/vectordotdev/vector/pull/25236). | [View code](https://github.com/vectordotdev/vector/tree/master/lib/fakedata) |
 
 ## Contributing
 [⬆️ Back to Top](#table-of-contents)

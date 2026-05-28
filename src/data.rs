@@ -19,7 +19,7 @@ struct JSONDataset {
     data: Vec<String>,
 }
 
-/// `get_dataset` returns the from the constants defined in `src/corpora/data.rs` and parses them into
+/// `get_dataset` returns the data from the constants defined in `src/corpora/data.rs` and other files, then parses them into
 /// a `JSONDataset struct.
 fn get_dataset(key: &str) -> Result<JSONDataset, Box<dyn Error>> {
     let json_dataset: &str = match key {
@@ -76,7 +76,10 @@ fn get_dataset(key: &str) -> Result<JSONDataset, Box<dyn Error>> {
         "appliances" => corpora::DATA_APPLIANCES,
         "new_technologies" => corpora::DATA_NEW_TECHNOLOGIES,
         "programming_languages" => corpora::DATA_PROGRAMMING_LANGUAGES,
+        // TLDS
+        "tlds" => tlds::DATA_TLDS,
         _ => "",
+
     };
 
     let dataset: JSONDataset = serde_json::from_str(json_dataset)?;
